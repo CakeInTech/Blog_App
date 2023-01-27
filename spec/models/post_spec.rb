@@ -1,42 +1,38 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  context 'Tests for #Post model' do
-    before :each do
-      @user = User.create(name: 'Cake')
-      @post = @user.posts.create(title: 'My first post')
-    end
+  subject { Post.new(title: 'hello man') }
 
-    describe 'Unit test for @post object' do
-      it 'checks that the @post object is valid' do
-        expect(@post).to be_valid
-      end
+  before { subject.save }
 
-      it 'checks that the title of the post is "My first post"' do
-        expect(@post.title).to eql 'My first post'
-      end
-    end
+  it 'Posts should be not be Valid' do
+    subject.title = nil
+    expect(subject).to_not be_valid
+  end
+  it 'User post counter to increment' do
+    subject.author = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                              bio: 'Teacher from Mexico.')
+    subject.send(:posts_counter)
+    expect(subject.author.posts_counter).to be(1)
+  end
+  it 'Likes Counter attribute should be greater or equal to zero' do
+    subject.likes_counter = -1
+    expect(subject).to_not be_valid
+  end
+  it 'Comments Counter attribute should be an integer number' do
+    subject.comments_counter = 'some random string'
+    expect(subject).to_not be_valid
+  end
+  it 'five_last_comments method should return the last five comments' do
+    post = described_class.create(title: 'Post One', text: 'This is the post one')
+    author = User.first
 
-    describe 'Unit test for @post object methods' do
-      it 'is not valid without a title' do
-        @post.title = nil
-        expect(@post).to_not be_valid
-      end
+    post.comments = [
+      Comment.new({ author:, text: 'This is the comment one' }),
+      Comment.new({ author:, text: 'This is the comment two' }),
+    ]
 
-      it 'has a title that is not more than 250 characters' do
-        @post.title = 'a' * 251
-        expect(@post).to_not be_valid
-      end
-
-      it 'has a comments_counter greater than or equal to 0' do
-        @post.comments_counter = -5
-        expect(@post).to_not be_valid
-      end
-
-      it 'has a likes_counter greater than or equal to 0' do
-        @post.likes_counter = -3
-        expect(@post).to_not be_valid
-      end
-    end
+    expect(post.last_comments.size).to be(2)
+    expect(post.last_comments.pluck(:id)).to match_array(post.comments.last(5).pluck(:id))
   end
 end

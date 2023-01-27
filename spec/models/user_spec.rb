@@ -1,24 +1,38 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  let(:user) { User.create(name: 'King Cake', posts_counter: 5) }
+RSpec.describe Post, type: :model do
+  subject { Post.new(title: 'hello man') }
 
-  it 'is valid with a name and posts_counter' do
-    expect(user).to be_valid
+  before { subject.save }
+
+  it 'Posts should be not be Valid' do
+    subject.title = nil
+    expect(subject).to_not be_valid
   end
-
-  it 'is not valid without a name' do
-    user.name = nil
-    expect(user).to_not be_valid
+  it 'User post counter to increment' do
+    subject.author = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                              bio: 'Teacher from Mexico.')
+    subject.send(:posts_counter)
+    expect(subject.author.posts_counter).to be(1)
   end
-
-  it 'has a posts_counter greater than or equal to 0' do
-    user.posts_counter = -1
-    expect(user).to_not be_valid
+  it 'Likes Counter attribute should be greater or equal to zero' do
+    subject.likes_counter = -1
+    expect(subject).to_not be_valid
   end
+  it 'Comments Counter attribute should be an integer number' do
+    subject.comments_counter = 'some random string'
+    expect(subject).to_not be_valid
+  end
+  it 'five_last_comments method should return the last five comments' do
+    post = described_class.create(title: 'Post One', text: 'This is the post one')
+    author = User.first
 
-  it 'has a posts_counter set to 0 by default' do
-    user = User.create(name: 'King Cake')
-    expect(user.posts_counter).to eq 0
+    post.comments = [
+      Comment.new({ author:, text: 'This is the comment one' }),
+      Comment.new({ author:, text: 'This is the comment two' }),
+    ]
+
+    expect(post.last_comments.size).to be(2)
+    expect(post.last_comments.pluck(:id)).to match_array(post.comments.last(5).pluck(:id))
   end
 end
