@@ -5,7 +5,6 @@ class Like < ApplicationRecord
 
   validates :likes_counter, numericality: { greater_than_or_equal_to: 0 }
 
-
   private
 
   def likes_counter
