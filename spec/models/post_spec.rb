@@ -29,7 +29,7 @@ RSpec.describe Post, type: :model do
 
     post.comments = [
       Comment.new({ author:, text: 'This is the comment one' }),
-      Comment.new({ author:, text: 'This is the comment two' }),
+      Comment.new({ author:, text: 'This is the comment two' })
     ]
 
     expect(post.last_comments.size).to be(2)
