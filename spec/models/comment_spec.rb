@@ -10,7 +10,7 @@ RSpec.describe Comment, type: :model do
       @comment = Comment.create(post: @post, author: @user, text: 'Hi Tom!')
     end
 
-    it 'Comments counter will be incremented' do
+    it 'check if comment counter is incremented' do
       expect(@post.comments.count).to eq 0
     end
   end
