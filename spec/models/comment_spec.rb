@@ -5,7 +5,7 @@ RSpec.describe Comment, type: :model do
   subject { Comment.new(text: 'hello man') }
 
   before { subject.save }
-  describe 'Test for the comments' do 
+  describe 'Test for the comments' do
     it 'comments should be not be Valid' do
       subject.text = nil
       expect(subject).to_not be_valid
