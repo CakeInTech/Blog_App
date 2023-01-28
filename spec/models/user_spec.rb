@@ -1,38 +1,39 @@
 require 'rails_helper'
+require 'faker'
 
-RSpec.describe Post, type: :model do
-  subject { Post.new(title: 'hello man') }
+RSpec.describe User, type: :model do
+  subject { User.new(name: 'Monkey D Luffy', photo: 'https://i.pinimg.com/736x/50/08/ef/5008efb9df96969624d2674645027a3a.jpg', bio: 'Future King of the Pirates.') }
 
   before { subject.save }
 
-  it 'Posts should be not be Valid' do
-    subject.title = nil
+  it 'User should be not be Valid' do
+    subject.name = nil
     expect(subject).to_not be_valid
   end
-  it 'User post counter to increment' do
-    subject.author = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                              bio: 'Teacher from Mexico.')
-    subject.send(:posts_counter)
-    expect(subject.author.posts_counter).to be(1)
+  it 'User should have a name' do
+    expect(subject.name).to be_present
+  end
+  it 'User should have a photo' do
+    expect(subject.photo).to be_present
+  end
+  it 'User should have a bio' do
+    expect(subject.bio).to be_present
   end
   it 'Likes Counter attribute should be greater or equal to zero' do
-    subject.likes_counter = -1
+    subject.posts_counter = -1
     expect(subject).to_not be_valid
   end
-  it 'Comments Counter attribute should be an integer number' do
-    subject.comments_counter = 'some random string'
+  it 'user name should not be more than 250' do
+    subject.name = Faker::Lorem.characters(number: 251)
     expect(subject).to_not be_valid
   end
-  it 'five_last_comments method should return the last five comments' do
-    post = described_class.create(title: 'Post One', text: 'This is the post one')
-    author = User.first
-
-    post.comments = [
-      Comment.new({ author:, text: 'This is the comment one' }),
-      Comment.new({ author:, text: 'This is the comment two' })
-    ]
-
-    expect(post.last_comments.size).to be(2)
-    expect(post.last_comments.pluck(:id)).to match_array(post.comments.last(5).pluck(:id))
+  it 'last_three_posts method should return the last three posts' do
+    post1 = Post.create(title: 'Post 1', text: 'This is the first post')
+    post2 = Post.create(title: 'Post 2', text: 'This is the second post')
+    post3 = Post.create(title: 'Post 3', text: 'This is the third post')
+    post4 = Post.create(title: 'Post 4', text: 'This is the fourth post')
+    subject.posts << post1 << post2 << post3 << post4
+    expect(subject.last_three_posts.size).to be(3)
+    expect(subject.last_three_posts.pluck(:id)).to match_array([post2.id, post3.id, post4.id])
   end
 end
