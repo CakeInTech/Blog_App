@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(author: current_user, title: params[:title], text: params[:text])
+    @post = Post.new(post_params)
     if @post.save
       redirect_to start_path
     else
@@ -18,5 +18,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(request.parameters[:id])
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:author, :title, :text)
   end
 end
