@@ -82,4 +82,3 @@ gem 'database_cleaner'
 gem 'devise'
 gem 'letter_opener'
 gem 'rails-controller-testing'
-
