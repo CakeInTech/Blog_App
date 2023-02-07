@@ -138,6 +138,13 @@ Software Developer | Javascript, React, Redux, MongoDB, PostgreSql, Ruby. | Good
 - GitHub: [@MohamedCK](https://github.com/MohamedCK)
 - LinkedIn: [@mohamed-cake](https://www.linkedin.com/in/mohamed-cake/)
 
+
+👤 **Ekpenisi Erue Raphael**
+
+- GitHub: [@eerapheal](https://github.com/eerapheal)
+- Twitter: [@ekpenisiraphael](https://twitter.com/ekpenisiraphael)
+- LinkedIn: [ekpenisi-e-raphael-9678a221a](https://www.linkedin.com/in/ekpenisi-e-raphael-9678a221a/)
+
 ## 🔭 Future Features <a name="future-features"></a>
 
 > Describe 1 - 3 features you will add to the project.
