@@ -79,5 +79,7 @@ group :test do
 end
 
 gem 'database_cleaner'
-gem 'rails-controller-testing'
 gem 'devise'
+gem 'letter_opener'
+gem 'rails-controller-testing'
+
