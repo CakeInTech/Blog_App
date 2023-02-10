@@ -134,7 +134,8 @@ rspec
 
 
 👤 **Mohamed Abdulhakim**
-Software Developer | Javascript, React, Redux, MongoDB, PostgreSql, Ruby. | Good with Frontend. #OPENTOWORK
+
+  Software Developer | Javascript, React, Redux, MongoDB, PostgreSql, Ruby. | Good with Frontend. #OPENTOWORK
 - GitHub: [@MohamedCK](https://github.com/MohamedCK)
 - LinkedIn: [@mohamed-cake](https://www.linkedin.com/in/mohamed-cake/)
 
@@ -143,7 +144,7 @@ Software Developer | Javascript, React, Redux, MongoDB, PostgreSql, Ruby. | Good
 
 - GitHub: [@eerapheal](https://github.com/eerapheal)
 - Twitter: [@ekpenisiraphael](https://twitter.com/ekpenisiraphael)
-- LinkedIn: [ekpenisi-e-raphael-9678a221a](https://www.linkedin.com/in/ekpenisi-e-raphael-9678a221a/)
+- LinkedIn: [ekpenisi-e-raphael](https://www.linkedin.com/in/ekpenisi-e-raphael/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 

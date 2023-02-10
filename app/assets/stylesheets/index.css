@@ -23,29 +23,52 @@ h1 {
   margin: 0;
 }
 
-.new-post {
-  color: #fff;
-  text-decoration: none;
-  background-color: #0073b1;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  margin-left: 1rem;
+.button_to {
+  width: auto;
+  margin: 0;
+}
+
+.welcome-section {
+  text-align: center;
+}
+
+.welcome-header {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.welcome-header span {
+  color: lightgreen;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 600px) {
   .navbar {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
   }
 
   h1 {
     margin-bottom: 1rem;
   }
 
-  .new-post {
-    margin: 1rem 0;
-    width: 100%;
-    text-align: center;
+  .userImg {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
   }
 }
 
