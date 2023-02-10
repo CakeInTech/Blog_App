@@ -144,7 +144,7 @@ rspec
 
 - GitHub: [@eerapheal](https://github.com/eerapheal)
 - Twitter: [@ekpenisiraphael](https://twitter.com/ekpenisiraphael)
-- LinkedIn: [ekpenisi-e-raphael-9678a221a](https://www.linkedin.com/in/ekpenisi-e-raphael-9678a221a/)
+- LinkedIn: [ekpenisi-e-raphael](https://www.linkedin.com/in/ekpenisi-e-raphael/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
