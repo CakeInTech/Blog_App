@@ -1,3 +1,4 @@
+require 'securerandom'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -5,10 +6,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-first_user = User.create(name: 'Monkey D Luffy', photo: 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/luffy-black-one-piece-john-gerald-tubale.jpg', bio: 'The guy who is gonna become the next pirate king.', email: 'Luffy@gmail.com', password: 'luffy12345', password_confirmation: 'luffy12345', role: 'admin')
-second_user = User.create(name: 'Roronoa Zoro', photo: 'https://i.pinimg.com/736x/b1/1a/7e/b11a7e8ad1ef52c852b64d1c8ebf7f97.jpg', bio: 'The guy who is gonna become the worlds greatest Swordsmen', email: 'zoro@gmail.com', password: 'threeswordstyle', password_confirmation: 'threeswordstyle', role: 'user')
+first_user = User.create(name: 'Monkey D Luffy', photo: 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/luffy-black-one-piece-john-gerald-tubale.jpg', bio: 'The guy who is gonna become the next pirate king.', email: 'Luffy@gmail.com', password: 'luffy12345', password_confirmation: 'luffy12345', role: 'admin', jti: SecureRandom.hex(64))
+second_user = User.create(name: 'Roronoa Zoro', photo: 'https://i.pinimg.com/736x/b1/1a/7e/b11a7e8ad1ef52c852b64d1c8ebf7f97.jpg', bio: 'The guy who is gonna become the worlds greatest Swordsmen', email: 'zoro@gmail.com', password: 'threeswordstyle', password_confirmation: 'threeswordstyle', role: 'user', jti: SecureRandom.hex(64))
 
-third_user = User.create(name: 'Nami', photo: 'https://i.pinimg.com/originals/96/1f/f8/961ff8e53f2f2e519771f9a4301fe4fa.jpg', bio: '"Cat Burglar" Nami[11] is the navigator of the Straw Hat Pirates and one of the Senior Officers of the Straw Hat Grand Fleet.[4] She is the third member of the crew and the second to join, doing so during the Orange Town Arc.[18] She is the adoptive sister of Nojiko after the two were orphaned and taken in by Bell-mère.', email: 'Nami@gmail.com', password: 'stormgirl123', password_confirmation: 'stormgirl123', role: 'user')
+third_user = User.create(name: 'Nami', photo: 'https://i.pinimg.com/originals/96/1f/f8/961ff8e53f2f2e519771f9a4301fe4fa.jpg', bio: '"Cat Burglar" Nami[11] is the navigator of the Straw Hat Pirates and one of the Senior Officers of the Straw Hat Grand Fleet.[4] She is the third member of the crew and the second to join, doing so during the Orange Town Arc.[18] She is the adoptive sister of Nojiko after the two were orphaned and taken in by Bell-mère.', email: 'Nami@gmail.com', password: 'stormgirl123', password_confirmation: 'stormgirl123', role: 'user', jti: SecureRandom.hex(64))
 
 first_post = Post.create(author_id: 1, title: 'Demon Luffy', text: 'Contrary to popular belief, Demon Luffy is not simply a mythical creature. It has roots in a piece of pirate folklore from long ago, making it a legendary figure in the pirate world. Many sailors have sought to catch a glimpse of Demon Luffy, but few have succeeded. Demon Luffy is known for his incredible strength and ferocity, striking fear into the hearts of even the bravest of pirates. The first line of his tale, "Demon Luffy, the terror of the seas", speaks of his infamous reputation.')
 
