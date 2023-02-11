@@ -81,5 +81,7 @@ end
 gem 'cancancan'
 gem 'database_cleaner'
 gem 'devise'
+gem 'devise-jwt'
+gem 'jwt'
 gem 'letter_opener'
 gem 'rails-controller-testing'
