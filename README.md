@@ -9,7 +9,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Blog App ](#-blog-app-)
+- [📖 Recipe App ](#-recipe-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -30,11 +30,11 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Blog App <a name="about-project"></a>
+# 📖 Recipe App <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
-**Blog App** is cutting-edge app, built using the robust and efficient Ruby on Rails framework, that allows users to connect and engage with one another. By creating an account, users can easily discover new posts, as well as access their own personal profile to view all of their own contributions. The app also allows for seamless posting, commenting, and liking, making it the perfect platform for sharing ideas, opinions, and experiences. 😄
+**Recipe App** 
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -67,9 +67,8 @@
 
 > Describe between 1-3 key features of the application.
 
-- **[User-Profiles]**
-- **[Content-Posting]**
-- **[Comment-and-interaction]**
+- **[Recipe-creation]**
+- **[shoping-list-generator]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -140,18 +139,18 @@ rspec
 - LinkedIn: [@mohamed-cake](https://www.linkedin.com/in/mohamed-cake/)
 
 
-👤 **Ekpenisi Erue Raphael**
+👤 **Tashobya Israel**
 
-- GitHub: [@eerapheal](https://github.com/eerapheal)
-- Twitter: [@ekpenisiraphael](https://twitter.com/ekpenisiraphael)
-- LinkedIn: [ekpenisi-e-raphael](https://www.linkedin.com/in/ekpenisi-e-raphael/)
+- GitHub: [@githubhandle](https://github.com/tashisrael)
+- Twitter: [@twitterhandle](https://twitter.com/tashisrael)
+- Linkedin: [@linkedinhandle](https://www.linkedin.com/in/tashobya-israel-6a66b0181/l)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[User-posting]**
-- [ ] **[commenting-feature]**
+- [ ] **[User can add food]**
+- [ ] **[User can createa recipe]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
